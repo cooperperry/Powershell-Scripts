@@ -3,3 +3,6 @@ Get-ADGroupMember 'XXXXXXXXXXXXXXXXX' | Get-ADUser -Properties DisplayName |Sort
 
 #Query MoreLog to scan if a connection has been established to a VPN profile in the past 6 months.
 zgrep -E 'VPN.*(XXXXXXXXXXX).*assigned' vpn-msgs.log-2021* > ~/VPNoutput.txt
+
+#Query MoreLog with find (takes longer)
+find . -name '*vpn-msgs.log-202101*' -exec zgrep -H -E '(XXXXX).*assigned' {} \;
