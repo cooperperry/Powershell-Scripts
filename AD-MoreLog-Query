@@ -1,0 +1,5 @@
+#Query Active Directory for DisplayName and lastLogonDate. This will sort from earliest to latest.
+Get-ADGroupMember 'XXXXXXXXXXXXXXXXX' | Get-ADUser -Properties DisplayName |Sort lastLogonDate| Select name | Export-Csv -Path C:\Users\XXXX\list.csv
+
+#Query MoreLog to scan if a connection has been established to a VPN profile in the past 6 months.
+zgrep -E 'VPN.*(XXXXXXXXXXX).*assigned' vpn-msgs.log-2021* > ~/VPNoutput.txt
